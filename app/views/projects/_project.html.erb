@@ -1,7 +1,10 @@
 <li>
   <div><%= project.name %></div>
   <div><%= project.description %></div>
+  <div><%= link_to 'Edit Project', edit_project_path(id: project.id) %></div>
+  <div><%= link_to 'Delete Project', project_path(id: project.id), method: :delete %></div>
 
+  <% #todo - extract these two display possibilities into their own partials   %>
   <% if project.material_list %>
 
       <div>Materials needed</div>
@@ -17,10 +20,18 @@
             <tr>
               <td><%= need.name %></td>
               <td><%= need.quantity %></td>
+              <td><%= link_to 'Edit', edit_material_need_path(id: need.id) %></td>
+              <td><%= link_to 'Delete', material_need_path(id: need.id), method: :delete %></td>
             </tr>
         <% end %>
 
       </table>
+
+      <%= link_to 'Add needed material', new_material_need_path(project_id: project.id) %>
+
+  <% else %>
+
+      <%= link_to 'Add Materials To Project', new_material_list_path(project_id: project.id) %>
 
   <% end %>
 

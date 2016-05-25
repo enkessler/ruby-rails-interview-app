@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h1>Add new project</h1>
+</div>
+<div>
+  <%= form_for(@project) do |form| %>
+    <%= render 'create_project_fields', form: form %>
+    <%= form.submit "Add project", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

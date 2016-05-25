@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
   
-  has_one :material_list
+  has_one :material_list, dependent: :destroy
 
 end

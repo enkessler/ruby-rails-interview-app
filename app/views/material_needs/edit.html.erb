@@ -1,0 +1,10 @@
+<div class="text-center">
+  <h1>Edit needed material</h1>
+</div>
+
+<div>
+  <%= form_for(@material_need) do |form| %>
+    <%= render 'create_material_need_fields', form: form %>
+    <%= form.submit "Update needed material", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
