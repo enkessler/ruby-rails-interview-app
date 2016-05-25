@@ -24,20 +24,31 @@ User.find_or_create_by(name: 'Jill Henry', email: 'jill_number_2@superior_constr
 User.find_or_create_by(name: 'Janine Hill', email: 'j.hill@superior_construction.com')
 
 
-p1 =Project.find_or_create_by(name: "Donna's Patio", description: "Donna is requesting a new patio")
+p1 = Project.find_or_create_by(name: "Donna's Patio", description: "Donna is requesting a new patio")
 p2 = Project.find_or_create_by(name: "Jake's House", description: "A ranch style house with a 2 door garage")
-Project.find_or_create_by(name: "Phils Moving Van", description: "Phil needs a custom van to move his stuff back to Ohio")
+p3 = Project.find_or_create_by(name: "Phils Moving Van", description: "Phil needs a custom van to move his stuff back to Ohio")
 
 m1 = MaterialList.find_or_create_by(project: p1)
 m2 = MaterialList.find_or_create_by(project: p2)
+m3 = MaterialList.find_or_create_by(project: p3)
 
-MaterialNeed.find_or_create_by(name: "2x4", quantity: 100, material_list: m1)
-MaterialNeed.find_or_create_by(name: "2x8", quantity: 50, material_list: m1)
-MaterialNeed.find_or_create_by(name: "glass", quantity: 11, material_list: m1)
+MaterialNeed.find_or_create_by(name: "Brick", quantity: 10, material_list: m1)
+MaterialNeed.find_or_create_by(name: "2x4", quantity: 10, material_list: m1)
+MaterialNeed.find_or_create_by(name: "4x4", quantity: 4, material_list: m1)
+MaterialNeed.find_or_create_by(name: "Sand", quantity: 10, material_list: m1)
+MaterialNeed.find_or_create_by(name: "Chairs", quantity: 4, material_list: m1)
+MaterialNeed.find_or_create_by(name: "Table", quantity: 1, material_list: m1)
 
-MaterialNeed.find_or_create_by(name: "Carpet", quantity: 50, material_list: m2)
-MaterialNeed.find_or_create_by(name: "glass", quantity: 11, material_list: m2)
+MaterialNeed.find_or_create_by(name: "2x4", quantity: 1000, material_list: m2)
+MaterialNeed.find_or_create_by(name: "8x4 plywood", quantity: 500, material_list: m2)
+MaterialNeed.find_or_create_by(name: "Cement", quantity: 150, material_list: m2)
+MaterialNeed.find_or_create_by(name: "Nails", quantity: 30000, material_list: m2)
+MaterialNeed.find_or_create_by(name: "Shingles", quantity: 1000, material_list: m2)
 
+MaterialNeed.find_or_create_by(name: "2x4", quantity: 5, material_list: m3)
+MaterialNeed.find_or_create_by(name: "Wheels", quantity: 4, material_list: m3)
+MaterialNeed.find_or_create_by(name: "Glass", quantity: 3, material_list: m3)
+MaterialNeed.find_or_create_by(name: "Carpet", quantity: 5, material_list: m3)
 
 Material.find_or_create_by(name: "2x4", quantity: 100, unit: '')
 Material.find_or_create_by(name: "4x4", quantity: 100, unit: '')

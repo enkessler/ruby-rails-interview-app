@@ -19,11 +19,12 @@
         <% project.material_list.material_needs.each do |need| %>
             <tr>
               <td><%= need.name %></td>
+              <% #todo - add material units to these amounts   %>
               <td><%= need.quantity %></td>
               <td><%= link_to 'Edit', edit_material_need_path(id: need.id) %></td>
               <td><%= link_to 'Delete', material_need_path(id: need.id), method: :delete %></td>
             </tr>
-        <% end %>
+      <% end %>
 
       </table>
 
