@@ -23,9 +23,21 @@ User.find_or_create_by(name: 'Jill McDuff', email: 'jill.mcDuff@superior_constru
 User.find_or_create_by(name: 'Jill Henry', email: 'jill_number_2@superior_construction.com')
 User.find_or_create_by(name: 'Janine Hill', email: 'j.hill@superior_construction.com')
 
-Project.find_or_create_by(name: "Donna's Patio", description: "Donna is requesting a new patio")
-Project.find_or_create_by(name: "Jake's House", description: "A ranch style house with a 2 door garage")
+
+p1 =Project.find_or_create_by(name: "Donna's Patio", description: "Donna is requesting a new patio")
+p2 = Project.find_or_create_by(name: "Jake's House", description: "A ranch style house with a 2 door garage")
 Project.find_or_create_by(name: "Phils Moving Van", description: "Phil needs a custom van to move his stuff back to Ohio")
+
+m1 = MaterialList.find_or_create_by(project: p1)
+m2 = MaterialList.find_or_create_by(project: p2)
+
+MaterialNeed.find_or_create_by(name: "2x4", quantity: 100, material_list: m1)
+MaterialNeed.find_or_create_by(name: "2x8", quantity: 50, material_list: m1)
+MaterialNeed.find_or_create_by(name: "glass", quantity: 11, material_list: m1)
+
+MaterialNeed.find_or_create_by(name: "Carpet", quantity: 50, material_list: m2)
+MaterialNeed.find_or_create_by(name: "glass", quantity: 11, material_list: m2)
+
 
 Material.find_or_create_by(name: "2x4", quantity: 100, unit: '')
 Material.find_or_create_by(name: "4x4", quantity: 100, unit: '')

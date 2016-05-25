@@ -1,4 +1,27 @@
 <li>
   <div><%= project.name %></div>
   <div><%= project.description %></div>
+
+  <% if project.material_list %>
+
+      <div>Materials needed</div>
+
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>Quantity</th>
+        </tr>
+
+
+        <% project.material_list.material_needs.each do |need| %>
+            <tr>
+              <td><%= need.name %></td>
+              <td><%= need.quantity %></td>
+            </tr>
+        <% end %>
+
+      </table>
+
+  <% end %>
+
 </li>
