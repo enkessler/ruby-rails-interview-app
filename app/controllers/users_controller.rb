@@ -31,10 +31,12 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
+
+    # todo - this doesn't seem to work
+    flash.now[:notice] = "#{user.name} was removed."
+
     user.destroy
 
-    # todo - looks like a particular workflow was in mind here but it was never finished
-    # flash.now[:notice] = "#{user.name} was removed."
 
     redirect_to users_path
   end
