@@ -1,0 +1,17 @@
+<h1>All Project Assignments</h1>
+
+<% @users.each do |user| %>
+
+    <% if user.assignments && !user.assignments.empty? %>
+
+        <h3 id="<%= user.id %>"><%= user.name %></h3>
+
+        <ul>
+          <% user.projects.each do |project| %>
+              <li><%= project.name %></li>
+          <% end %>
+        </ul>
+
+    <% end %>
+
+<% end %>

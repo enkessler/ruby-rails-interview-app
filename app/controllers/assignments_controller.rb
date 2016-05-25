@@ -1,7 +1,12 @@
 class AssignmentsController < ApplicationController
 
   # todo - I feel like I shouldn't have to have hard reference so many other classes in this controller
-  
+
+  def index
+    # todo - asking for users instead of assignments seems like a red flag.
+    @users = User.all
+  end
+
   def new
     @assignment = Assignment.new
 

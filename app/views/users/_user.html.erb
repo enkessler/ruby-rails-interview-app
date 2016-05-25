@@ -2,4 +2,6 @@
   <%= link_to user.name, user %>
   |
   <%= link_to user.email, user %>
+  |
+  <%= link_to 'See assignments', assignments_path(anchor: user.id) %>
 </li>
