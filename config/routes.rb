@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :materials
   resources :material_lists
   resources :material_needs
+  resources :assignments
 
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

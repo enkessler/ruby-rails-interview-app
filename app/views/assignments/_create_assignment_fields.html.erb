@@ -1,0 +1,8 @@
+<%= form.label :user %>
+<%= form.select :user do %>
+
+    <% users.each do |user| %>
+        <%= content_tag(:option, user.name, value: user.id) %>
+    <% end %>
+
+<% end %>

@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>Assign employee to <%= @project.name %></h1>
+</div>
+
+<div>
+  <%= form_for(@assignment) do |form| %>
+      <% # todo - this doesn't seem like the proper way to do this  %>
+      <%= render 'create_assignment_fields', form: form, users: @users %>
+      <%= hidden_field_tag 'project_id', @project.id %>
+      <%= form.submit "Add employee", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

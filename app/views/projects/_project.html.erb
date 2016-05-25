@@ -22,7 +22,7 @@
               <% #todo - add material units to these amounts   %>
               <td><%= need.quantity %></td>
               <td><%= link_to 'Edit', edit_material_need_path(id: need.id) %></td>
-              <td><%= link_to 'Delete', material_need_path(id: need.id), method: :delete %></td>
+              <td><%= link_to 'Remove', material_need_path(id: need.id), method: :delete %></td>
             </tr>
       <% end %>
 
@@ -49,11 +49,14 @@
         <% project.users.each do |user| %>
             <tr>
               <td><%= user.name %></td>
+              <td><%= link_to 'Remove', assignment_path(id: Assignment.find_by(project_id: project.id, user_id: user.id).id), method: :delete %></td>
             </tr>
         <% end %>
 
       </table>
 
   <% end %>
+
+  <div><%= link_to 'Assign Employees To Project', new_assignment_path(project_id: project.id) %></div>
 
 </li>
