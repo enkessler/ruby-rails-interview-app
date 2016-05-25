@@ -18,10 +18,25 @@ class UsersController < ApplicationController
     render 'new'
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+
+    render 'show'
+  end
+
   def destroy
     user = User.find(params[:id])
     user.destroy
-    flash.now[:notice] = "#{user.name} was removed."
+
+    # todo - looks like a particular workflow was in mind here but it was never finished
+    # flash.now[:notice] = "#{user.name} was removed."
+
+    redirect_to users_path
   end
 
   def new
